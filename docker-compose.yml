@@ -1,0 +1,28 @@
+version: '3'
+services:
+  phoenix:
+    build:
+      context: .
+    environment:
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PGDATABASE: code_challenge_back_end_dev
+      PGPORT: 5432
+      PGHOST: postgres
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres
+  postgres:
+    image: kartoza/postgis:10.0-2.4
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASS: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    restart: always
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
