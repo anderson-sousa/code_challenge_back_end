@@ -39,6 +39,10 @@ To execute the test suits locally:
 mix test
 ```
 
+## API documentation
+
+You can use the content of api.yml to see the docs on [Swagger Editor](https://editor.swagger.io/?_ga=2.120330568.1739590788.1554839529-1342984360.1550614872).
+
 ## Deploy
 
 After clone this project to the server and define the environment variables(SECRET, PGUSER,PGPASSWORD,PGDATABASE), run the following commands:
